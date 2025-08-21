@@ -1,0 +1,28 @@
+[project]
+name = "steaminvesthelper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "artem",email = "temagroz-2@yandex.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyTelegramBotAPI = "^4.28.0"
+psycopg = {extras = ["binary"], version = "^3.2.9"}
+alembic = "^1.12.0"
+sqlalchemy = "^2.0.41"
+pydantic-settings = "^2.10.1"
+psycopg2-binary = "^2.9.9"
