@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     POSTGRES_USER: str = Field(description="Пользователь БД")
     POSTGRES_PASSWORD: str = Field(description="Пароль БД")
     POSTGRES_DB: str = Field(description="Название БД")
-    DB_URL: str = Field(description="URL БД")
+    # DB_URL: str = Field(description="URL БД")
     BOT_TOKEN: str = Field(description="Секретный токен бота")
 
     class Config:
