@@ -24,10 +24,11 @@ def register_messages(bot: TeleBot):
                 price = round(float(item_data[2]),2)
                 item_repo = ItemRepository(db)
 
-                user = user_repo.get_user_id_by_chat_id(message.chat.id)
+                user = user_repo.get_user(message.chat.id)
                 if not user:
                     user_repo.create_user(message.chat.id)
                 user_id = user_repo.get_user_id_by_chat_id(message.chat.id)
+                print(user_id,name,price,price,datetime.today().date(),count)
                 item = item_repo.add_item(
                     user_id,
                     name,

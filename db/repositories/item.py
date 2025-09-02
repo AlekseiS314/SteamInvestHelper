@@ -13,18 +13,21 @@ class ItemRepository:
 
     def add_item(self, owner_id, name, purchase_price, current_price, purchase_date, quantity):
         item = Item(
-            owner_id,
-            name,
-            purchase_price,
-            current_price,
-            purchase_date,
-            quantity,
+            owner_id=owner_id,
+            name=name,
+            purchase_price=purchase_price,
+            current_price=current_price,
+            purchase_date=purchase_date,
+            quantity=quantity,
             # history_purchase
         )
 
         self._db.add(item)
+        print(item.item_id)
         self._db.commit()
+        print(item.item_id)
         self._db.flush()
+        print(item.item_id)
 
         return item
 

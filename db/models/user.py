@@ -9,3 +9,4 @@ class User(Base):
 
     user_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     chat_id: Mapped[int] = mapped_column(BigInteger, unique=True, nullable=False)
+

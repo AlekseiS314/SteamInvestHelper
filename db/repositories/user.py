@@ -6,20 +6,22 @@ class UserRepository:
         self._db = db
 
     def create_user(self,chat_id : int):
-        user = User(chat_id)
+        user = User(chat_id=chat_id)
 
         self._db.add(user)
         self._db.commit()
-        self._db.flesh()
+        self._db.flush()
 
     def delete_user_by_chat_id(self,chat_id: int):
         user = self._db.query(User).filter(User.chat_id == chat_id).first()
         self._db.delete(user)
         self._db.commit()
-        self._db.flesh()
+        self._db.flush()
 
     def get_user_id_by_chat_id(self,chat_id: int):
         user = self._db.query(User).filter(User.chat_id == chat_id).first()
         return user.user_id
 
-
+    def get_user(self,chat_id: int):
+        user = self._db.query(User).filter(User.chat_id == chat_id).first()
+        return user

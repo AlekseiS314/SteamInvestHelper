@@ -6,7 +6,7 @@ from contextlib import contextmanager
 from bot.config import settings
 
 
-engine = create_engine(settings.DB_URL)
+engine = create_engine(f'postgresql://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}@127.0.0.1:5432/{settings.POSTGRES_DB}')
 _session = sessionmaker(bind=engine, expire_on_commit=False, class_=Session)
 
 @contextmanager
